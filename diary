@@ -3,3 +3,6 @@
 今日はlesson8のp20まで
 
 レッスン9のp4まで
+
+lesson 9 のp10までやったけど，colcon buildでエラー出てる
+ros2 launch mypkg talk_listen.launch.pyの結果もおかしかった
