@@ -29,7 +29,7 @@ data: 2橋本環奈＆伊藤沙莉『紅白』司会コンビの衣装に “待
 ```
 - 実行例
 
-![gif]((https://github.com/user-attachments/assets/25cc85c1-5396-465d-bb8a-235741be8efe)
+![gif](https://github.com/user-attachments/assets/25cc85c1-5396-465d-bb8a-235741be8efe)
 
 ## 動作環境
 - テスト済みバージョン: 3.7~3.11
