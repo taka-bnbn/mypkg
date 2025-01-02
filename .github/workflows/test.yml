@@ -1,41 +1,16 @@
 name: ROS2 Node Test
-
-on:
-  push:
-    branches:
-      - main
-
+on: push
 jobs:
   test:
     runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+    container: ryuichiueda/ubuntu22.04-ros2:latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Install Dependencies
+      - uses: actions/checkout@v2
+      - name: build and test
         run: |
-          sudo apt update
-          sudo apt install -y curl gnupg lsb-release
-
-          # ROS 2 Humbleのリポジトリを追加
-          curl -fsSL https://packages.ros.org/ros2/ubuntu/ros.asc | sudo tee /etc/apt/keyrings/ros.asc > /dev/null
-          echo "deb [signed-by=/etc/apt/keyrings/ros.asc] http://packages.ros.org/ros2/ubuntu/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2-latest.list
-          sudo apt update
-          sudo apt install -y ros-humble-desktop python3-pip
-
-          # Cythonのインストール
-          pip3 install cython
-
-          # 必要なPythonライブラリをインストール
-          pip3 install requests beautifulsoup4 numpy
-
-      - name: Setup ROS2 Environment
-        run: |
-          source /opt/ros/humble/setup.bash
-          echo "source /opt/ros/humble/setup.bash" >> $GITHUB_ENV
-
-      - name: Execute test.bash
-        run: |
-          chmod +x ./src/mypkg/test/test.bash
-          ./src/mypkg/test/test.bash $HOME
-
+          rsync -av ./ /root/ros2_ws/src/mypkg/
+          cd /root/ros2_ws
+          bash -xv ./src/mypkg/test/test.bash /root
