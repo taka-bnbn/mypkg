@@ -39,7 +39,8 @@ data: 2橋本環奈＆伊藤沙莉『紅白』司会コンビの衣装に “待
 ## ライセンス
 
 - 3条項BSDライセンスの下，再頒布及び使用が許可されます．
-- このコマンドの社会保険料，所得税，住民税，基礎控除の計算方法は[このサイト](https://www.musashi-corporation.com/wealthhack/annual-income-net-income)を基にコードを書いています．
+- このコマンドのデータの取得方法および表示方法は[このサイト](http://vividhobby.blog.fc2.com/blog-entry-553.html)や，[このサイト](http://ibarenai.seesaa.net/article/470489281.html)や，[このサイト](https://torisky.com/python%EF%BC%9Ayahoo%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%81%AB%E8%A1%A8%E7%A4%BA%E3%81%99/)
+を基にコードを書いています．
 
 ## Copyright
 © 2024 Takaya Mizumaki 水牧鷹哉
