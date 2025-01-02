@@ -13,7 +13,7 @@ colcon build || { echo "Build failed!"; exit 1; }
 source $dir/ros2_ws/install/setup.bash
 
 # 10秒間、ROS2ノードを実行
-timeout 10 ros2 run mypkg news_publisher > /tmp/mypkg.log 2>&1
+timeout 5 ros2 run mypkg news_publisher > /tmp/mypkg.log 2>&1
 
 # 現在の日本時間を取得（HHMMSS形式）
 timejp=$(TZ='Asia/Tokyo' date +%H%M%S)
@@ -27,3 +27,5 @@ if [ -f /tmp/mypkg.log ]; then
 else
     echo "Log file not found!"
 fi
+
+

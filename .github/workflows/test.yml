@@ -14,31 +14,25 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          # ROS 2 Humbleのリポジトリを追加
           sudo apt update
           sudo apt install -y curl gnupg lsb-release
 
-          # ROS 2 Humbleリポジトリの公開鍵を追加
-          sudo mkdir -p /etc/apt/keyrings
-          curl -fsSL https://packages.ros.org/ros2/ubuntu/ros.asc | sudo tee /etc/apt/keyrings/ros.asc > /dev/null
-
           # ROS 2 Humbleのリポジトリを追加
+          curl -fsSL https://packages.ros.org/ros2/ubuntu/ros.asc | sudo tee /etc/apt/keyrings/ros.asc > /dev/null
           echo "deb [signed-by=/etc/apt/keyrings/ros.asc] http://packages.ros.org/ros2/ubuntu/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2-latest.list
-
-          # パッケージリストを更新
           sudo apt update
+          sudo apt install -y ros-humble-desktop python3-pip
 
-          # 必要なパッケージをインストール
-          sudo apt install -y python3-colcon-common-extensions ros-humble-desktop python3-pip
+          # Cythonのインストール
+          pip3 install cython
 
           # 必要なPythonライブラリをインストール
-          pip3 install requests beautifulsoup4
+          pip3 install requests beautifulsoup4 numpy
 
       - name: Setup ROS2 Environment
         run: |
+          source /opt/ros/humble/setup.bash
           echo "source /opt/ros/humble/setup.bash" >> $GITHUB_ENV
-          echo "export PATH=/usr/bin:$PATH" >> $GITHUB_ENV
-        shell: bash
 
       - name: Execute test.bash
         run: |
