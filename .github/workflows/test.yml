@@ -1,31 +1,35 @@
-name: ROS2 Test
+name: ROS2 Node Test
 
-on: 
-  push:
+on:
+  push:  # プッシュイベントをトリガー
     branches:
-      - main
-  pull_request:
+      - main  # 特定のブランチにプッシュされたときに実行
 
 jobs:
   test:
-    runs-on: ubuntu-22.04
-
+    runs-on: ubuntu-22.04  # Ubuntu 22.04で動作
     steps:
-      - uses: actions/checkout@v3
+      # コードをチェックアウト
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - name: Set up ROS2 environment
+      # 必要な依存関係をインストール
+      - name: Install Dependencies
         run: |
           sudo apt update
-          sudo apt install -y python3-colcon-common-extensions ros-humble-desktop
-          source /opt/ros/humble/setup.bash
+          sudo apt install -y python3-colcon-common-extensions ros-humble-desktop python3-pip
+          pip3 install requests beautifulsoup4
 
-      - name: Prepare workspace
+      # ROS 2 Humble環境の設定
+      - name: Setup ROS2 Environment
         run: |
-          mkdir -p ~/ros2_ws/src
-          rsync -av . ~/ros2_ws/src/mypkg/
+          echo "source /opt/ros/humble/setup.bash" >> $GITHUB_ENV
+          echo "export PATH=/usr/bin:$PATH" >> $GITHUB_ENV
+        shell: bash
 
-      - name: Build and Test
+      # ビルドとテストの実行
+      - name: Execute test.bash
         run: |
-          chmod +x ~/ros2_ws/src/mypkg/test/test.bash
-          ~/ros2_ws/src/mypkg/test/test.bash ~
+          chmod +x ./src/mypkg/test/test.bash
+          ./src/mypkg/test/test.bash $HOME
 
