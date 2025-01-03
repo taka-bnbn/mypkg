@@ -23,7 +23,7 @@ Yahooニュースの見出しを1秒ごとに取得し,ROS2のStringメッセー
 
 ~/ros2_ws/srcが存在しない場合は，以下のコマンドで作成します．
 ```bash
-mkdir -p ~/ros2_ws/src
+$ mkdir -p ~/ros2_ws/src
 ```
 プロジェクトディレクトリに移動
 ```bash
