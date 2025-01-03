@@ -7,8 +7,7 @@ dir=~
 [ "$1" != "" ] && dir="$1"
 
 # ROS 2 ワークスペースのビルド
-cd "$dir/ros2_ws" || { echo "Failed to change directory to $dir/ros2_ws"; exit 0; }
-colcon build || { echo "colcon build failed"; exit 0; }
+cd "$dir/ros2_ws" || { echo "Failed to change directory to $dir/ros2_ws"; exit 1; }
 
 # ROS 2環境を設定
 if [ -f "$dir/.bashrc" ]; then
