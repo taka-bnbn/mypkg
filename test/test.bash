@@ -14,11 +14,17 @@ if [ -f "$dir/.bashrc" ]; then
     source "$dir/.bashrc"
 else
     echo "No .bashrc file found in $dir"
-    exit 1 
+    exit 1
 fi
+
+# タイムゾーンを取得
+timezone=$(date +'%Z')
 
 # ROS 2ノードを起動
 timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log || { echo "Failed to launch ROS 2 node"; exit 1; }
+
+# ログにタイムゾーン情報を追加
+echo "Timezone: $timezone" >> /tmp/mypkg.log
 
 # ニュースのキーワードを取得（例: 定義済みのキーワード）
 news="example_keyword"
