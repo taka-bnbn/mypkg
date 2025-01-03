@@ -36,9 +36,9 @@ data: 2橋本環奈＆伊藤沙莉『紅白』司会コンビの衣装に “待
 ---
 ```
 - 実行例
-
+<div align="center">
 ![gif](https://github.com/user-attachments/assets/25cc85c1-5396-465d-bb8a-235741be8efe)
-
+</div>
 ## 動作環境
 - Python
 - テスト済みバージョン: 3.7~3.11
