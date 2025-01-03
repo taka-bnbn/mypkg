@@ -15,6 +15,8 @@ setup(
         'console_scripts': [
             'talker = mypkg.talker:main',
             'listener = mypkg.listener:main',  # listenerノードも必要なら>追加
+            'announcer = mypkg.announcer:main',
+
         ],
     },
 

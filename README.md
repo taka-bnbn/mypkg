@@ -9,7 +9,7 @@
 ## 使用例
 - 送信側
 ```bash
-$ ros2 run mypkg talker
+$ ros2 run mypkg announcer 
 ```
 - 受信側
 ```bash
