@@ -21,6 +21,10 @@ Yahooニュースの見出しを1秒ごとに取得し,ROS2のStringメッセー
 - Python 3.7~3.11 が利用可能であること.
 - Ubuntu 24.04 LTS または互換性のある環境.
 
+~/ros2_ws/srcが存在しない場合は，以下のコマンドで作成します．
+```bash
+mkdir -p ~/ros2_ws/src
+```
 プロジェクトディレクトリに移動
 ```bash
 $ cd ~/ros2_ws/src 
