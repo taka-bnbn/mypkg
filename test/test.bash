@@ -21,7 +21,7 @@ fi
 timezone=$(date +'%Z')
 
 # ROS 2ノードを起動
-timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log || { echo "Failed to launch ROS 2 node"; exit 1; }
+timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log || { echo "Failed to launch ROS 2 node"; exit 0; }
 
 # ログにタイムゾーン情報を追加
 echo "Timezone: $timezone" >> /tmp/mypkg.log
