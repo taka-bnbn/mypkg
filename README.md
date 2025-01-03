@@ -21,13 +21,13 @@ Yahooニュースの見出しを1秒ごとに取得し,ROS2のStringメッセー
 - Python 3.7~3.11 が利用可能であること.
 - Ubuntu 24.04 LTS または互換性のある環境.
 
+プロジェクトディレクトリに移動
+```bash
+$ cd ~/ros2_ws/src 
+```
 リポジトリのクローン
 ```bash
 $ git clone https://github.com/taka-bnbn/mypkg.git
-```
-プロジェクトディレクトリに移動
-```bash
-$ cd mypkg
 ```
 ROS2ワークスペースに移動
 ```bash
@@ -35,11 +35,11 @@ $ cd ~/ros2_ws
 ```
 パッケージをビルド
 ```bash
-$ colcon build --packages-select mypkg
+$ colcon build
 ```
 環境設定スクリプトの読み込み
 ```bash
-$ source install/setup.bash
+$ source ~/.bashrc
 ```
 
 ## 使用例
