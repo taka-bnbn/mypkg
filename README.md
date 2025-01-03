@@ -1,7 +1,7 @@
 
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![ROS2 Node Test](https://github.com/taka-bnbn/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/taka-bnbn/mypkg/actions/workflows/test.yml)
-### <font color="##ff1493">今話題に上がっているニュースが気になりませんか？</font>
+# <font color="##ff1493">今話題に上がっているニュースが気になりませんか？</font>
 
 ## 概要
 - yahooニュースのトピックを出力送信
@@ -32,8 +32,10 @@ data: 2橋本環奈＆伊藤沙莉『紅白』司会コンビの衣装に “待
 ![gif](https://github.com/user-attachments/assets/25cc85c1-5396-465d-bb8a-235741be8efe)
 
 ## 動作環境
+- Python
 - テスト済みバージョン: 3.7~3.11
-- Ubuntu 22.04 LTS
+- Ubuntu 24.04 LTS
+- テストで利用したコンテナhttps://hub.docker.com/repository/docker/ryuichiueda/ubuntu22.04-ros2
 
 ## ライセンス
 
