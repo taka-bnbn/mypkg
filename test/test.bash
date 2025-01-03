@@ -14,7 +14,7 @@ if [ -f "$dir/.bashrc" ]; then
     source "$dir/.bashrc"
 else
     echo "No .bashrc file found in $dir"
-    exit 0
+    exit 1 
 fi
 
 # ROS 2ノードを起動
