@@ -1,3 +1,9 @@
+#!/bin/bash
+# SPDX-FileCopyrightText: 2024 Takaya Mizumaki
+# SPDX-License-Identifier: BSD-3-Clause
+
+
+
 import launch
 from launch import LaunchDescription
 from launch.actions import LogInfo

@@ -1,3 +1,8 @@
+#!/bin/bash
+# SPDX-FileCopyrightText: 2024 Takaya Mizumaki
+# SPDX-License-Identifier: BSD-3-Clause
+
+
 from setuptools import setup, find_packages
 
 setup(
