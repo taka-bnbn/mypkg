@@ -18,7 +18,7 @@ else
 fi
 
 # ROS 2ノードを起動
-timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log || { echo "Failed to launch ROS 2 node"; exit 0; }
+timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log || { echo "Failed to launch ROS 2 node"; exit 1; }
 
 # ニュースのキーワードを取得（例: 定義済みのキーワード）
 news="example_keyword"
