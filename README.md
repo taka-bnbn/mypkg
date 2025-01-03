@@ -14,12 +14,41 @@ Yahooニュースの見出しを1秒ごとに取得し,ROS2のStringメッセー
 /news トピックには，Stringメッセージが送信されます．
 <br>このメッセージは，Yahooニュースの見出しが含まれています.
 
+## 導入方法
+前提条件
+このプログラムを実行するためには、以下の環境が必要です：
+- ROS2 がインストールされていること.
+- Python 3.7~3.11 が利用可能であること.
+- Ubuntu 24.04 LTS または互換性のある環境.
+
+リポジトリのクローン プロジェクトをローカルにクローンします.
+```bash
+$ git clone https://github.com/taka-bnbn/mypkg.git
+```
+プロジェクトディレクトリに移動
+```bash
+$ cd mypkg
+```
+ROS2ワークスペースに移動
+```bash
+$ cd ~/ros2_ws
+```
+パッケージをビルド
+```bash
+$ colcon build --packages-select mypkg
+```
+環境設定スクリプトの読み込み
+```bash
+$ source install/setup.bash
+```
+
 ## 使用例
 - 送信側
 ```bash
 $ ros2 run mypkg announcer 
 ```
 - 受信側
+もう一つ端末を立ち上げ，次のように入力する．
 ```bash
 $ ros2 topic echo /news
 ```
