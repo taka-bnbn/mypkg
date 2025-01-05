@@ -1,50 +1,19 @@
 
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![ROS2 Node Test](https://github.com/taka-bnbn/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/taka-bnbn/mypkg/actions/workflows/test.yml)
-# <font color="##ff1493">今話題に上がっているニュースが気になりませんか？</font>
+# <font color="##ff1493">ヤフーニュース送信出力</font>
 
 ## 概要
-このプログラムは，ヤフーニュースのトピックを出力送信するRos2のパッケージです.
+このプログラムは，ヤフーニュースのトピックを出力送信するROS2のパッケージです.
 
 ## Node
+ファイル名:announcer
 Yahooニュースの見出しを1秒ごとに取得し,ROS2のStringメッセージとして/news トピックに配信します.
 <br>トピックを購読することで,リアルタイムでニュースを受信することができます.
 
 ## Topic
 /news トピックには，Stringメッセージが送信されます．
 <br>このメッセージは，Yahooニュースの見出しが含まれています.
-
-## 導入方法
-前提条件
-このプログラムを実行するためには、以下の環境が必要です：
-- ROS2 がインストールされていること.
-- Python 3.7~3.11 が利用可能であること.
-- Ubuntu 24.04 LTS または互換性のある環境.
-
-~/ros2_ws/srcが存在しない場合は，以下のコマンドで作成します．
-```bash
-$ mkdir -p ~/ros2_ws/src
-```
-プロジェクトディレクトリに移動
-```bash
-$ cd ~/ros2_ws/src 
-```
-リポジトリのクローン
-```bash
-$ git clone https://github.com/taka-bnbn/mypkg.git
-```
-ROS2ワークスペースに移動
-```bash
-$ cd ~/ros2_ws
-```
-パッケージをビルド
-```bash
-$ colcon build
-```
-環境設定スクリプトの読み込み
-```bash
-$ source ~/.bashrc
-```
 
 ## 使用例
 - 送信側
