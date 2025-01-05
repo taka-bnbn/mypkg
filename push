@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# スクリプトのエラー時に終了する
+set -e
+
+# Gitの状態をチェック
+echo "Checking git status..."
+git status
+
+# すべての変更をステージング
+echo "Adding all changes..."
+git add -A
+
+# コミット
+echo "Committing changes..."
+git commit -m "auto"
+
+# プッシュ
+echo "Pushing to repository..."
+git push
+
+echo "All changes pushed successfully!"
+
