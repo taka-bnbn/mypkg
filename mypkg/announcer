@@ -19,39 +19,32 @@ class NewsPublisher(Node):
         self.headlines = []  # ニュースの見出しを格納するリスト
         self.index = 0  # 配信するニュースのインデックス
 
-    def fetch_news(self):
-        try:
-            # Yahooニュースのページを取得
-            response = requests.get(self.news_url)
-            soup = BeautifulSoup(response.text, 'html.parser')
+    
+  def fetch_news(self):
+    try:
+        response = requests.get(self.news_url, timeout=5)
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-            # pickupニュース
-            elems = soup.find_all('a', href=re.compile("news.yahoo.co.jp/pickup"))
-            headlines = []
-            for elem in elems:
-                # 見出し（テキスト）を抽出し、HTMLタグを取り除く
-                headline = elem.get_text(strip=True)
-                link = elem.attrs['href']
-                headlines.append(f"{headline} - {link}")
+        # pickupニュース（制限されていないと仮定）
+        elems = soup.find_all('a', href=re.compile("news.yahoo.co.jp/pickup"))
+        headlines = []
+        for elem in elems:
+            headline = elem.get_text(strip=True)
+            link = elem.attrs['href']
+            headlines.append(f"{headline} - {link}")
 
-            # トップニュース
-            elems = soup.find_all('a', href=re.compile("news.yahoo.co.jp/topics"))
-            for elem in elems:
-                headline = elem.get_text(strip=True)
-                link = elem.attrs['href']
-                headlines.append(f"{headline} - {link}")
+        # トップニュース（制限されていないと仮定）
+        elems = soup.find_all('a', href=re.compile("news.yahoo.co.jp/topics"))
+        for elem in elems:
+            headline = elem.get_text(strip=True)
+            link = elem.attrs['href']
+            headlines.append(f"{headline} - {link}")
 
-            # その他のニュース
-            elems = soup.find_all('a', href=re.compile("news.yahoo.co.jp/articles"))
-            for elem in elems:
-                headline = elem.get_text(strip=True)
-                link = elem.attrs['href']
-                headlines.append(f"{headline} - {link}")
+        # ニュースリストを保存
+        self.headlines = headlines
+    except Exception as e:
+        self.get_logger().error(f"Failed to fetch news: {e}")
 
-            # ニュースの見出しリストを保存
-            self.headlines = headlines
-        except Exception as e:
-            self.get_logger().error(f"Failed to fetch news: {e}")
 
     def publish_news(self):
         if not self.headlines:
