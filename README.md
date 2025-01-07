@@ -26,9 +26,6 @@ $ ros2 run mypkg announcer
 ```bash
 $ ros2 topic echo /news
 ```
-- 実行例
-
-![gif](https://github.com/user-attachments/assets/25cc85c1-5396-465d-bb8a-235741be8efe)
 
 ## 動作環境
 - Python
