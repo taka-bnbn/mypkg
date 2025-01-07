@@ -19,29 +19,27 @@ class NewsPublisher(Node):
         self.headlines = []
         self.index = 0
 
-    
-  def fetch_news(self):
-    try:
-        response = requests.get(self.news_url, timeout=5)
-        soup = BeautifulSoup(response.text, 'html.parser')
+    def fetch_news(self):
+        try:
+            response = requests.get(self.news_url, timeout=5)
+            soup = BeautifulSoup(response.text, 'html.parser')
 
-        elems = soup.find_all('a', href=re.compile("news.yahoo.co.jp/pickup"))
-        headlines = []
-        for elem in elems:
-            headline = elem.get_text(strip=True)
-            link = elem.attrs['href']
-            headlines.append(f"{headline} - {link}")
+            elems = soup.find_all('a', href=re.compile("news.yahoo.co.jp/pickup"))
+            headlines = []
+            for elem in elems:
+                headline = elem.get_text(strip=True)
+                link = elem.attrs['href']
+                headlines.append(f"{headline} - {link}")
 
-        elems = soup.find_all('a', href=re.compile("news.yahoo.co.jp/topics"))
-        for elem in elems:
-            headline = elem.get_text(strip=True)
-            link = elem.attrs['href']
-            headlines.append(f"{headline} - {link}")
+            elems = soup.find_all('a', href=re.compile("news.yahoo.co.jp/topics"))
+            for elem in elems:
+                headline = elem.get_text(strip=True)
+                link = elem.attrs['href']
+                headlines.append(f"{headline} - {link}")
 
-        self.headlines = headlines
-    except Exception as e:
-        self.get_logger().error(f"ニュースが見つからん(´;ω;｀): {e}")
-
+            self.headlines = headlines
+        except Exception as e:
+            self.get_logger().error(f"ニュースが見つからん(´;ω;｀): {e}")
 
     def publish_news(self):
         if not self.headlines:
