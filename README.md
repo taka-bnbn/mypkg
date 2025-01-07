@@ -35,7 +35,7 @@ $ ros2 topic echo /news
 - テストで利用したコンテナhttps://hub.docker.com/repository/docker/ryuichiueda/ubuntu22.04-ros2
 
 ## Yahoo Newsのスクレイピングについて
-Yahoo NEWSの[robots.txt](https://news.yahoo.co.jp/robots.txt)のSitemapに，"https://news.yahoo.co.jp/sitemaps/topicsList.xml" との記述があったため， 使用してもよいと判断しました．
+Yahoo NEWSの[robots.txt](https://news.yahoo.co.jp/robots.txt)のSitemapに，"https://news.yahoo.co.jp/sitemaps/topicsList.xml" と,"https://news.yahoo.co.jp/sitemaps/pickup.xml"との記述があったため， 使用してもよいと判断しました．
 
 
 ## ライセンス
