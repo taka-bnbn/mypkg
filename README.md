@@ -4,7 +4,7 @@
 # <font color="##ff1493">ヤフーニュース送信出力</font>
 
 ## 概要
-このプログラムは， ヤフーニュースのトピックを出力送信するROS2のパッケージです.
+このプログラムは，ヤフーニュースのトピックを出力送信するROS2のパッケージです.
 
 ## Node
 ノード名:announcer
@@ -22,7 +22,7 @@ Topic名:news
 $ ros2 run mypkg announcer 
 ```
 - 受信側
-もう一つ端末を立ち上げ， 次のように入力する．
+もう一つ端末を立ち上げ，次のように入力する．
 ```bash
 $ ros2 topic echo /news
 ```
@@ -40,7 +40,8 @@ $ ros2 topic echo /news
 を基にコードを書いています．
 
 ### Yahoo Newsのスクレイピングについて
-Yahoo Newsの[robots.txt](https://news.yahoo.co.jp/robots.txt)に， User-agent: * と記述があったのと， Disallow:/topic/の記述がないため， 使用してもよいと判断しました．
+Yahoo NEWSの[robots.txt](https://news.yahoo.co.jp/robots.txt)のSitemapに，"https://news.yahoo.co.jp/sitemaps/topicsList.xml" との記述があったため， 使用してもよいと判断しました．
 
 ## Copyright
 © 2024 Takaya Mizumaki 水牧鷹哉
+
