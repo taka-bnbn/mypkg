@@ -26,7 +26,9 @@ $ ros2 run mypkg announcer
 ```bash
 $ ros2 topic echo /news
 ```
-
+```bash
+![gif](https://github.com/user-attachments/assets/25cc85c1-5396-465d-bb8a-235741be8efe)
+```
 ## 動作環境
 - Python
 - テスト済みバージョン: 3.11 
@@ -34,7 +36,7 @@ $ ros2 topic echo /news
 - ROS2 humble 
 - テストで利用したコンテナhttps://hub.docker.com/repository/docker/ryuichiueda/ubuntu22.04-ros2
 
-## Yahoo Newsのスクレイピングについて
+## Yahoo Newsのトピック利用に関して
 Yahoo NEWSの[robots.txt](https://news.yahoo.co.jp/robots.txt)のSitemapに，"https://news.yahoo.co.jp/sitemaps/topicsList.xml" と, "https://news.yahoo.co.jp/sitemaps/pickup.xml" との記述があったため， 使用してもよいと判断しました．
 
 ## 注意事項
@@ -44,8 +46,11 @@ Yahoo NEWSの[robots.txt](https://news.yahoo.co.jp/robots.txt)のSitemapに，"h
 
 ## ライセンス
 - 3条項BSDライセンスの下，再頒布及び使用が許可されます．
-- このコマンドのデータの取得方法および表示方法は[このサイト](http://vividhobby.blog.fc2.com/blog-entry-553.html)や，[このサイト](http://ibarenai.seesaa.net/article/470489281.html)や，[このサイト](https://torisky.com/python%EF%BC%9Ayahoo%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%81%AB%E8%A1%A8%E7%A4%BA%E3%81%99/)や，[このサイト](https://zenn.dev/autumn_nsn/articles/298f579784305a)
-を基にコードを書いています．
+- このコマンドのデータの取得方法および表示方法は以下のサイトを利用しました．
+- http://vividhobby.blog.fc2.com/blog-entry-553.html
+- http://ibarenai.seesaa.net/article/470489281.html
+- https://torisky.com/python%EF%BC%9Ayahoo%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%81%AB%E8%A1%A8%E7%A4%BA%E3%81%99/
+- https://zenn.dev/autumn_nsn/articles/298f579784305a
 
 ## Copyright
 © 2024 Takaya Mizumaki 水牧鷹哉
