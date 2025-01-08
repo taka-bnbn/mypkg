@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #!/bin/bash
 # SPDX-FileCopyrightText: 2024 Takaya Mizumaki
 # SPDX-License-Identifier: BSD-3-Clause
